@@ -23,11 +23,11 @@ dataSources:
           handler: handleNFTBankCreated
       file: ./src/nft-bank-factory.ts
 templates:
-  - name: NFTBank
+  - name: NFTBankImpl
     kind: ethereum/contract
     network: fuji
     source:
-      abi: NFTBank
+      abi: NFTBankImpl
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -35,8 +35,8 @@ templates:
       entities:
         - NFTBankEntity
       abis:
-        - name: NFTBank
-          file: ./abis/NFTBank.json
+        - name: NFTBankImpl
+          file: ./abis/NFTBankImpl.json
       eventHandlers:
         - event: PrivateModeIsOn(bool)
           handler: handlePrivateModeIsOn
